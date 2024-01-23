@@ -1,9 +1,6 @@
-    /* .memorama {
-        display: grid;
-        grid-template-columns: repeat(4, 100px);
-        gap: 10px;
-        background-color: rgb(210, 15, 216);
-    } */
+
+
+/* border animation */
     #wrapper {
         height: 100vh;
         display: flex;
@@ -11,7 +8,8 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-evenly;
-        background-color: rgb(210, 15, 216);
+        background-image: url("../../../assets/backgrounds/Background2.jpg");
+        background-size: cover;
         }
         
         #game {
@@ -31,7 +29,11 @@
         transition: transform 0.5s;
         transform-style: preserve-3d;
         cursor: pointer;
-        background: #05d1fe;
+        background-color:aliceblue;
+        border-radius: 1rem;
+        /* pedir a richy imagenes */
+        /* background-image: url("../../../assets/Naipes/front.png");
+        background-size: cover; */
     }
     .card div {
         width: 100%;
@@ -49,7 +51,10 @@
     }
     
     .card-back {
-        visibility: hidden;
-    }
+        width: 100%;
+        height: 100%;
+        background-image: url("../../../assets/Naipes/back.png");
+        background-size: cover;
+        }
     img{width: 100PX;
     height: 100px;}

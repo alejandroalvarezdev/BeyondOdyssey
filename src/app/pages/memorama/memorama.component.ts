@@ -19,6 +19,8 @@ export class MemoramaComponent implements OnInit {
     { id: 1, image: '../../../assets/Iconos/Ecosistema Beyond/AROMA_ACUA.png' },
     { id: 2, image: '../../../assets/Iconos/Ecosistema Beyond/AROMA.png' },
     { id: 2, image: '../../../assets/Iconos/Ecosistema Beyond/AROMA.png' },
+    { id: 3, image: '../../../assets/Iconos/Ecosistema Beyond/CAFE_VERDE.png' },
+    { id: 3, image: '../../../assets/Iconos/Ecosistema Beyond/CAFE_VERDE.png' },
     // Add more cards as needed
   ];
 
