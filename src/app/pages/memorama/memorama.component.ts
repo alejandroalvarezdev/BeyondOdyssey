@@ -1,6 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
+interface Card {
+  id: number;
+  image: string;
+}
 @Component({
   selector: 'app-memorama',
   standalone: true,
@@ -9,38 +13,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './memorama.component.css',
 })
 export class MemoramaComponent implements OnInit {
-  cards: string[] = [
-    '../../../assets/Iconos/Ecosistema Beyond/AROMA.png',
-    '../../../assets/Iconos/Ecosistema Beyond/AROMA_ACUA.png',
-    '../../../assets/Iconos/Ecosistema Beyond/cafe_explicacion.jpg',
-    '../../../assets/Iconos/Ecosistema Beyond/AROMA_BLANCO.png',
-    'E',
-    'F',
-    'G',
-    'H',
-    '../../../assets/Iconos/Ecosistema Beyond/AROMA.png',
-    '../../../assets/Iconos/Ecosistema Beyond/AROMA_ACUA.png',
-    '../../../assets/Iconos/Ecosistema Beyond/cafe_explicacion.jpg',
-    '../../../assets/Iconos/Ecosistema Beyond/AROMA_BLANCO.png',
-    'E',
-    'F',
-    'G',
-    'H',
+
+  cards: Card[] = [
+    { id: 1, image: '../../../assets/Iconos/Ecosistema Beyond/AROMA_ACUA.png' },
+    { id: 1, image: '../../../assets/Iconos/Ecosistema Beyond/AROMA_ACUA.png' },
+    { id: 2, image: '../../../assets/Iconos/Ecosistema Beyond/AROMA.png' },
+    { id: 2, image: '../../../assets/Iconos/Ecosistema Beyond/AROMA.png' },
+    // Add more cards as needed
   ];
 
-  cardsB: Array<any> = [
-    { scr: '../../../assets/Iconos/Ecosistema Beyond/AROMA.png' },
-    { scr: '../../../assets/Iconos/Ecosistema Beyond/AROMA.png' },
-    { scr: '../../../assets/Iconos/Ecosistema Beyond/AROMA_ACUA.png' },
-    { scr: '../../../assets/Iconos/Ecosistema Beyond/cafe_explicacion.jpg' },
-    { scr: '../../../assets/Iconos/Ecosistema Beyond/AROMA_ACUA.png' },
-    { scr: '../../../assets/Iconos/Ecosistema Beyond/cafe_explicacion.jpg' },
-  ];
-  shuffledCards: Array<any> = [];
-  flippedCards: string[] = [];
-  matchedPairs: string[] = [];
+  shuffledCards: Card[] = [];
+  flippedCards: Card[] = [];
+  matchedPairs: Card[] = [];
 
   ngOnInit(): void {
+    // this.cards = this.cards.concat(this.cards); // Duplicate the cards to make pairs
     this.shuffleCards();
   }
 
@@ -49,19 +36,13 @@ export class MemoramaComponent implements OnInit {
     this.shuffledCards = [...this.cards];
     for (let i = this.shuffledCards.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [this.shuffledCards[i], this.shuffledCards[j]] = [
-        this.shuffledCards[j],
-        this.shuffledCards[i],
-      ];
+      [this.shuffledCards[i], this.shuffledCards[j]] = [this.shuffledCards[j], this.shuffledCards[i]];
     }
   }
 
-  flipCard(index: number) {
-    if (
-      this.flippedCards.length < 2 &&
-      !this.flippedCards.includes(index.toString())
-    ) {
-      this.flippedCards.push(index.toString());
+  flipCard(card: Card) {
+    if (this.flippedCards.length < 2 && !this.flippedCards.includes(card)) {
+      this.flippedCards.push(card);
 
       if (this.flippedCards.length === 2) {
         setTimeout(() => this.checkMatch(), 1000);
@@ -70,18 +51,21 @@ export class MemoramaComponent implements OnInit {
   }
 
   checkMatch() {
-    const [index1, index2] = this.flippedCards;
-    if (
-      this.shuffledCards[parseInt(index1)] ===
-      this.shuffledCards[parseInt(index2)]
-    ) {
-      this.matchedPairs.push(this.shuffledCards[parseInt(index1)]);
+    const [card1, card2] = this.flippedCards;
+    if (card1.id === card2.id) {
+      this.matchedPairs.push(card1, card2);
     }
 
     this.flippedCards = [];
 
-    if (this.matchedPairs.length === this.cards.length / 2) {
+    if (this.matchedPairs.length === this.cards.length) {
       alert('¡Felicidades! Has ganado el juego.');
     }
   }
 }
+
+
+
+
+  
+

@@ -1,18 +1,17 @@
     <div class="memorama">
         <div id="wrapper">
             <div id="game">
-                <div *ngFor="let card of shuffledCards; let i = index" class="card" (click)="flipCard(i)">
-                    <div *ngIf="flippedCards.includes(i.toString()) || matchedPairs.includes(card)" class="card-content">
-                    <img src={{card}} alt="">
+                
+                    <div *ngFor="let card of shuffledCards; let i = index" class="card" (click)="flipCard(card)">
+                      <img *ngIf="flippedCards.includes(card) || matchedPairs.includes(card)" src={{card.image}} class="card-image">
+                    <div *ngIf="!flippedCards.includes(card) && !matchedPairs.includes(card)" class="card-back"></div>
                     
-                    </div>
-                    <div *ngIf="!flippedCards.includes(i.toString()) && !matchedPairs.includes(card)" class="card-back"></div>
                 </div>
+                
                 </div>
             </div>
         </div>
     
-    <img src="../../../assets/Iconos/Ecosistema Beyond/cafe_explicacion.jpg" alt="">
 
-    <p *ngFor="let card of shuffledCards; let i = index">{{card}}</p>
+
 
