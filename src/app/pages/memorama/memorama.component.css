@@ -45,6 +45,11 @@
         position: absolute;
 
         }
+
+    .card div:hover{
+        border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
+            box-shadow: 10px 10px rgba(0,0,0,.25);
+    }
     
     .card-content {
         visibility: visible;
@@ -56,5 +61,7 @@
         background-image: url("../../../assets/Naipes/back.png");
         background-size: cover;
         }
+
+
     img{width: 100PX;
     height: 100px;}

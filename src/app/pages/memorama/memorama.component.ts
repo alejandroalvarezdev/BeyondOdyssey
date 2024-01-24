@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router'
 
 interface Card {
   id: number;
@@ -27,7 +28,7 @@ export class MemoramaComponent implements OnInit {
   shuffledCards: Card[] = [];
   flippedCards: Card[] = [];
   matchedPairs: Card[] = [];
-
+  constructor(private router:Router){}
   ngOnInit(): void {
     // this.cards = this.cards.concat(this.cards); // Duplicate the cards to make pairs
     this.shuffleCards();
@@ -62,6 +63,7 @@ export class MemoramaComponent implements OnInit {
 
     if (this.matchedPairs.length === this.cards.length) {
       alert('¡Felicidades! Has ganado el juego.');
+      this.router.navigate(['flappy']);
     }
   }
 }
