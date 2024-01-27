@@ -10,6 +10,7 @@
         justify-content: space-evenly;
         background-image: url("../../../assets/backgrounds/Background2.jpg");
         background-size: cover;
+        
         }
         
         #game {
@@ -19,21 +20,25 @@
             flex-wrap:wrap;
             align-items: center;
             justify-content: center;
+            
         }
     
     .card {
         width: 100px;
-        height: 140px;
+        height: 150px;
         margin: 1rem;
         position: relative;
         transition: transform 0.5s;
         transform-style: preserve-3d;
         cursor: pointer;
-        background-color:aliceblue;
+        background-color:rgb(28, 117, 196);
         border-radius: 1rem;
-        /* pedir a richy imagenes */
-        /* background-image: url("../../../assets/Naipes/front.png");
-        background-size: cover; */
+        
+    
+    }
+    .card img {
+        width: 100%;
+        height: 100%;
     }
     .card div {
         width: 100%;
@@ -45,7 +50,9 @@
         position: absolute;
 
         }
-
+    .card-image{
+        border-radius: 1rem;
+        }
     .card div:hover{
         border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
             box-shadow: 10px 10px rgba(0,0,0,.25);
@@ -65,3 +72,8 @@
 
     img{width: 100PX;
     height: 100px;}
+
+    .misionVision{
+        color: aliceblue;
+        font-size: 1zrem;
+    }
