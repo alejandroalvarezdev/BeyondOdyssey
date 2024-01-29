@@ -103,7 +103,7 @@ export class MemoramaComponent implements OnInit {
 
     if (this.matchedPairs.length === this.cards.length) {
       alert('¡Felicidades! Has ganado el juego.');
-      this.router.navigate(['flappy']);
+      this.router.navigate(['snake']);
     }
   }
 }

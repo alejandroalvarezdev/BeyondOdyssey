@@ -7,7 +7,7 @@ export const routes: Routes = [
     {path:'', component:HomeComponent},
     {path:'memorama', component:MemoramaComponent},
     {
-        path: 'flappy',
-        loadChildren: () => import('./pages/flappy-game/flappy-game.module').then(m => m.FlappyGameModule)
+        path: 'snake',
+        loadChildren: () => import('./pages/snake-game/snake-game.module').then(m => m.SnakeGameModule)
     }
 ];
