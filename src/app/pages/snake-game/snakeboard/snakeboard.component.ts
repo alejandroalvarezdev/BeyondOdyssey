@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, HostListener, OnInit} from '@angular/core';
 import {Food} from "../food";
 import {Snake} from "../snake";
 import {outsideGrid} from "../gameboard-grid.util";
@@ -14,6 +14,7 @@ import {Router,ActivatedRoute} from '@angular/router'
   styleUrl: './snakeboard.component.css'
 })
 export class SnakeboardComponent {
+  @HostListener('window:keydown', ['$event'])
   title = 'snakeGame1938web';
   gameBoard: any;
   snake = new Snake();
@@ -29,6 +30,7 @@ constructor(private router:Router, private route:ActivatedRoute){}
   ngAfterViewInit() {
     this.gameBoard = document.querySelector('.game-board');
     window.requestAnimationFrame(this.start.bind(this));
+    
   }
 
   ngOnInit(): void {
@@ -96,6 +98,17 @@ constructor(private router:Router, private route:ActivatedRoute){}
       return 6;
     }
     return 7;
+  }
+  handleKeyDown(event: KeyboardEvent) {
+    // Verificar si se presionaron las teclas de flecha
+    if (
+      event.key === 'ArrowUp' ||
+      event.key === 'ArrowDown' ||
+      event.key === 'ArrowLeft' ||
+      event.key === 'ArrowRight'
+    ) {
+      event.preventDefault(); // Evitar el comportamiento predeterminado (desplazamiento)
+    }
   }
 
 }

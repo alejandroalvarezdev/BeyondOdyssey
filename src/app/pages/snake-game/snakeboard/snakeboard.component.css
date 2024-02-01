@@ -19,10 +19,15 @@
     --dpad-arrow-shift: 5px ;
     --dpad-arrow-move: 35%;
   }
+  contenedor_maestro{
+    width: 100% !important;
+    max-width: 600px; 
+    height: 100vh !important;
+    border: 1px solid #000;
+  }
   .container2 {
     margin: 0  ;
-    height: 100%  ;
-    width: 100%  ;
+   
     display: flex  ;
     justify-content: space-evenly  ;
   }
@@ -70,8 +75,7 @@
   .container2 .game-board {
     background-color: #d8ebe4  ;
     /* width: 100vmin  ;  */
-    width: 100vmin  ;
-    height: 100vmin  ;
+   
     display: grid  ;
     align-self: center  ;
     grid-template-rows: repeat(21, 1fr)  ;
@@ -287,10 +291,11 @@
     z-index: 99  ;
   }
   .container2 .game-board {
-    background-color: #d8ebe4  ;
+    background-image: url("../../../../assets/Animaciones/background1.gif");
+    background-size: cover;
     /* width: 100vmin  ;  */
-    width: 100vmin  ;
-    height: 100vmin  ;
+    width: 90vmin  ;
+    height: 90vmin  ;
     display: grid  ;
     align-self: center  ;
     grid-template-rows: repeat(21, 1fr)  ;
