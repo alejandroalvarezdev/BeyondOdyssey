@@ -70,6 +70,7 @@ export class MemoramaComponent implements OnInit {
   matchedPairs: Card[] = [];
   nivel:any ;
   baraja_por_nivel:Array<any> = [];
+  gameOver = false;
   // nextLevel:number = 0;
   constructor(private router:Router,private route:ActivatedRoute){}
   ngOnInit(): void {
@@ -126,10 +127,11 @@ export class MemoramaComponent implements OnInit {
     this.flippedCards = [];
 
     if (this.matchedPairs.length === this.baraja_por_nivel.length) {
-      console.log("Im alive");
-      alert('¡Felicidades! Has ganado el juego.');
+      this.gameOver = true;
+      setTimeout(() => {
+        this.router.navigate(['snake',this.nivel]);
+      }, 3000);
       
-      this.router.navigate(['snake',this.nivel]);
     }
   }
 }

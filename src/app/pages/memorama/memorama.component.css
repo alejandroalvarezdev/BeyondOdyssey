@@ -1,5 +1,10 @@
 
-
+.memorama{
+    background-image: url("../../../assets/backgrounds/Background2.jpg");
+    background-size: cover;
+    background-repeat: repeat;
+    min-height:100vh;
+}
 /* border animation */
     #wrapper {
         height: 100vh;
@@ -8,8 +13,7 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-evenly;
-        background-image: url("../../../assets/backgrounds/Background2.jpg");
-        background-size: cover;
+        
         
         }
         
@@ -20,6 +24,8 @@
             flex-wrap:wrap;
             align-items: center;
             justify-content: center;
+            margin-top: 20px;
+        z-index: 1;
             
         }
     
@@ -66,7 +72,8 @@
         width: 100%;
         height: 100%;
         background-image: url("../../../assets/Naipes/back.png");
-        background-size: cover;
+        background-size:cover;
+        
         }
 
 
@@ -77,3 +84,39 @@
         color: aliceblue;
         font-size: 1zrem;
     }
+    .contenedor {
+        position: relative;
+        height: 100vh;
+      }
+
+      .mensaje-felicitaciones {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        padding: 20px;
+        border: 2px solid #4caf50;
+        border-radius: 8px;
+        color: #0f1b0f; /* Asegura que el texto sea legible */
+        z-index: 2;
+        overflow: hidden; /* Asegura que el desenfoque no se extienda más allá del mensaje */
+      }
+
+      .mensaje-felicitaciones::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: inherit;
+        filter: blur(8px); /* Ajusta el valor según sea necesario */
+        z-index: -1; /* Detrás del contenido del mensaje */
+        background-color: aliceblue;
+      }
+
+      h1, p {
+        position: relative;
+        z-index: 3; /* Encima del fondo difuminado */
+      }
