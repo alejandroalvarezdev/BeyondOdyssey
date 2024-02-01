@@ -9,8 +9,9 @@ import {Router} from '@angular/router'
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  nivel:number = 1;
   constructor(private router:Router){}
 startGame(){
-  this.router.navigate(['memorama']);
+  this.router.navigate(['memorama',1]);
 }
 }

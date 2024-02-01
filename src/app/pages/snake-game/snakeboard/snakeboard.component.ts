@@ -3,7 +3,7 @@ import {Food} from "../food";
 import {Snake} from "../snake";
 import {outsideGrid} from "../gameboard-grid.util";
 import { CommonModule } from '@angular/common';
-import {Router} from '@angular/router'
+import {Router,ActivatedRoute} from '@angular/router'
 
 
 @Component({
@@ -18,8 +18,10 @@ export class SnakeboardComponent {
   gameBoard: any;
   snake = new Snake();
   food = new Food(this.snake);
+  nivel:any;
+  nextLevel:number =0;
 
-constructor(private router:Router){}
+constructor(private router:Router, private route:ActivatedRoute){}
 
   lastRenderTime = 0
   gameOver = false
@@ -30,6 +32,10 @@ constructor(private router:Router){}
   }
 
   ngOnInit(): void {
+    this.nivel = this.route.snapshot.paramMap.get('id');
+    console.warn("SnakeID level", this.nivel);
+    this.nextLevel = parseInt(this.nivel) + 1;
+    
     this.snake.listenToInputs();
   }
   dpadMovement(direction: string) {
@@ -39,8 +45,11 @@ constructor(private router:Router){}
 
   start(currentTime: any) {
     if (this.gameOver) {
-      return console.log('Game Over');
-      this.router.navigate(['memorama']);
+      this.router.navigate(['memorama',this.nextLevel]);
+      
+      
+      return console.warn("Game over");
+      
     }
 
     window.requestAnimationFrame(this.start.bind(this));
