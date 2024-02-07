@@ -75,7 +75,9 @@ export class MemoramaComponent implements OnInit {
   constructor(private router:Router,private route:ActivatedRoute){}
   ngOnInit(): void {
     this.nivel = this.route.snapshot.paramMap.get('id');
-    console.warn(this.nivel);
+    if (this.nivel == 4 ) {
+      this.router.navigate(['game-over']);
+    }
     
     // this.cards = this.cards.concat(this.cards); // Duplicate the cards to make pairs
     this.shuffleCards();

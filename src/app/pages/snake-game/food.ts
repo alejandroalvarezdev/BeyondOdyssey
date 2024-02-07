@@ -24,7 +24,9 @@ export class Food {
     foodElement.style.gridColumnStart = this.food.x;
     foodElement.classList.add('food');
     foodElement.style.borderRadius = '50%';
-    foodElement.style.backgroundColor = '#007580';
+    //foodElement.style.backgroundColor = '#007580';
+    foodElement.style.backgroundImage ='url(../../../../assets/Decoraciones/Asteroide2.jpg)';
+    foodElement.style.backgroundSize = 'cover'
     foodElement.style.transition = 'all .3ms ease-in';
     foodElement.style.border = '0.25vmin solid black';
     gameBoard.appendChild(foodElement);
