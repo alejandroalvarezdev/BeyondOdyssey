@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "dist/beyond-odyssey/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
