@@ -6,16 +6,13 @@
                 <p>¡Pasaste al siguiente nivel Beyonauta!</p>
                 </div>
             <div id="game">
-            
-                
                     <div *ngFor="let card of shuffledCards; let i = index" class="card" (click)="flipCard(card)">
                       <img *ngIf="flippedCards.includes(card) || matchedPairs.includes(card)" src={{card.image}} class="card-image">
-                    <div *ngIf="!flippedCards.includes(card) && !matchedPairs.includes(card)" class="card-back"></div>
-                    
+                    <div *ngIf="!flippedCards.includes(card) && !matchedPairs.includes(card)" class="card-back"></div>    
                 </div>
                 
                 </div>
             </div>
         </div>
-        <div class="memorama"><a href=""></a></div>
+        
     

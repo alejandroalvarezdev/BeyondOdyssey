@@ -9,8 +9,5 @@ export const routes: Routes = [
     {path:'memorama/:id', component:MemoramaComponent},
     {path:'snake/:id',component:SnakeboardComponent},
     {path:'game-over',component:GameOverComponent}
-    // {
-    //     path: 'snake/:id',
-    //     loadChildren: () => import('./pages/snake-game/snake-game.module').then(m => m.SnakeGameModule)
-    // }
+
 ];
