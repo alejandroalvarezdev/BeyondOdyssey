@@ -291,8 +291,10 @@
     z-index: 99  ;
   }
   .container2 .game-board {
-    background-image: url("../../../../assets/Animaciones/background1.gif");
-    background-size: cover;
+    background-image: url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjkza2Roa3c0bHc2MGU0aGE5ZjJvamRveGg0aWRzNGhnbzQ0NDJ6cyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3V0megwbBeETMgZa/giphy.gif");
+    backdrop-filter: blur(10px);
+
+    background-size:cover;
     /* width: 100vmin  ;  */
     width: 90vmin  ;
     height: 90vmin  ;
